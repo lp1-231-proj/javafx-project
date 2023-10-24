@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER_LEFT" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+fx:controller="com.example.javafxproject.CadastroFuncionarioController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <VBox alignment="CENTER" spacing="20.0">
+        <Label text="Cadastro Funcionario" />
+    </VBox>
+
+    <Label text="Nome Completo" />
+    <TextField fx:id="txfNome" />
+
+    <Label text="E-mail" />
+    <TextField fx:id="txfEmail" />
+
+    <Label text="Telefone" />
+    <TextField fx:id="txfTelefone" />
+
+    <Label text="RG" />
+    <TextField fx:id="txfrg" />
+
+    <Label text="CPF" />
+    <TextField fx:id="txfcpf" />
+
+    <Label text="Cargo" />
+    <TextField fx:id="txfcargo" />
+
+    <Label text="Data de nascimento" />
+    <TextField fx:id="txfdataNascimento" />
+
+    <Label text="CEP" />
+    <TextField fx:id="txfcep" />
+
+    <Label text="Cidade" />
+    <TextField fx:id="txfcidade" />
+
+
+    <VBox alignment="CENTER_RIGHT" spacing="20.0">
+        <Button text="Cadastrar" onAction="#onActionCadastrar" />
+    </VBox>
+
+</VBox>
