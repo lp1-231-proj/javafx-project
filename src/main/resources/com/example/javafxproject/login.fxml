@@ -10,7 +10,9 @@ fx:controller="com.example.javafxproject.LoginController">
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label text="Login" />
+    <VBox alignment="CENTER_LEFT" spacing="20.0">
+        <Label text="Login" />
+    </VBox>
 
     <Label text="CPF" />
     <TextField fx:id="txfCpf" />
