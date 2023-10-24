@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import java.net.*?>
+
 
 <VBox alignment="CENTER_LEFT" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
 fx:controller="com.example.javafxproject.CadastroFuncionarioController">
@@ -11,7 +13,7 @@ fx:controller="com.example.javafxproject.CadastroFuncionarioController">
     </padding>
 
     <VBox alignment="CENTER" spacing="20.0">
-        <Label text="Cadastro Funcionario" />
+        <Label text="Cadastro Funcionario" styleClass="titulo"/>
     </VBox>
 
     <Label text="Nome Completo" />
@@ -41,9 +43,12 @@ fx:controller="com.example.javafxproject.CadastroFuncionarioController">
     <Label text="Cidade" />
     <TextField fx:id="txfcidade" />
 
-
     <VBox alignment="CENTER_RIGHT" spacing="20.0">
-        <Button text="Cadastrar" onAction="#onActionCadastrar" />
+        <Button text="Cadastrar" onAction="#onActionCadastrar"/>
     </VBox>
+
+    <stylesheets>
+    <URL value="@style.css" />
+    </stylesheets>
 
 </VBox>

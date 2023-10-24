@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import java.net.*?>
 
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
 fx:controller="com.example.javafxproject.BuscaClienteController">
@@ -13,8 +14,11 @@ fx:controller="com.example.javafxproject.BuscaClienteController">
     <Label text="CPF" />
     <TextField fx:id="txfCpf" />
 
-    <Label text="Cliente ainda não possui cadastro?"/>
+    <Label text="Cliente ainda não possui cadastro?" styleClass="informacao"/>
 
-    <Button text="Cadastrar" onAction="#onActionCadastrar" />
+    <Button text="Cadastrar" onAction="#onActionCadastrar"/>
 
+    <stylesheets>
+    <URL value="@style.css" />
+    </stylesheets>
 </VBox>

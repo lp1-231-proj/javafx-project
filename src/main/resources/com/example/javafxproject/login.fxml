@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import java.net.*?>
 
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
 fx:controller="com.example.javafxproject.LoginController">
@@ -10,8 +11,8 @@ fx:controller="com.example.javafxproject.LoginController">
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <VBox alignment="CENTER_LEFT" spacing="20.0">
-        <Label text="Login" />
+    <VBox alignment="CENTER_LEFT" spacing="20.0" />
+        <Label text="Login" styleClass="titulo"/> 
     </VBox>
 
     <Label text="CPF" />
@@ -21,7 +22,11 @@ fx:controller="com.example.javafxproject.LoginController">
     <TextField fx:id="txfSenha" />
 
     <VBox alignment="CENTER_RIGHT" spacing="20.0">
-        <Button text="Entrar" onAction="#onActionEntrar" />
+        <Button text="Entrar" onAction="#onActionEntrar"/>
     </VBox>
+
+    <stylesheets>
+    <URL value="@style.css" />
+    </stylesheets>
 
 </VBox>
