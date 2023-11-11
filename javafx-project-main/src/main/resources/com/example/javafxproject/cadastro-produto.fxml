@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.*?>
+
+<VBox alignment="CENTER_LEFT" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+fx:controller="com.example.javafxproject.CadastroProdutoController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label text="Cadastro Produto" styleClass="titulo"/>
+
+    <HBox alignment="CENTER" spacing="20.0">
+    <VBox alignment="CENTER_LEFT" spacing="20.0">
+    <Label text="Modelo" />
+    <TextField fx:id="txfModelo" />
+
+    <Label text="Colorway" />
+    <TextField fx:id="txfColorway" />
+
+    <Label text="Preco" />
+    <TextField fx:id="txfpreco" />
+    </VBox>
+
+    <VBox alignment="CENTER_LEFT" spacing="20.0">
+    <Label text="Tamanho" />
+    <TextField fx:id="txfTamanho" />
+
+    <Label text="Quantidade" />
+    <TextField fx:id="txfQuantidade" />
+
+    </VBox>
+
+    </HBox>
+    <VBox alignment="CENTER_RIGHT" spacing="20.0">
+        <Button text="Cadastrar" onAction="#onActionCadastrar"/>
+    </VBox>
+
+    <stylesheets>
+    <URL value="@style.css" />
+    </stylesheets>
+
+</VBox>
