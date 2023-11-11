@@ -36,7 +36,7 @@ fx:controller="com.example.javafxproject.CadastroProdutoController">
 
     </HBox>
     <VBox alignment="CENTER_RIGHT" spacing="20.0">
-        <Button text="Cadastrar" onAction="#onActionCadastrar"/>
+        <Button text="Cadastrar" onAction="#onActionCadastrarP"/>
     </VBox>
 
     <stylesheets>
