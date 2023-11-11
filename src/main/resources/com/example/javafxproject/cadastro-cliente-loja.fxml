@@ -5,16 +5,16 @@
 <?import javafx.scene.layout.*?>
 <?import java.net.*?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+<VBox alignment="CENTER_LEFT" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
 fx:controller="com.example.javafxproject.CadastroClienteLojaController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <VBox alignment="CENTER_LEFT" spacing="20.0">
-        <Label text="Cadastro Cliente" styleClass="titulo"/>
-    </VBox>
+    <Label text="Cadastro Cliente" styleClass="titulo"/>
 
+    <HBox alignment="CENTER" spacing="20.0">
+    <VBox alignment="CENTER_LEFT" spacing="20.0">
     <Label text="Nome" />
     <TextField fx:id="txfNome" />
 
@@ -23,7 +23,9 @@ fx:controller="com.example.javafxproject.CadastroClienteLojaController">
 
     <Label text="Data de Nascimento" />
     <TextField fx:id="txfDataNascimento" />
+    </VBox>
 
+    <VBox alignment="CENTER_LEFT" spacing="20.0">
     <Label text="E-mail" />
     <TextField fx:id="txfEmail" />
 
@@ -32,7 +34,9 @@ fx:controller="com.example.javafxproject.CadastroClienteLojaController">
 
     <Label text="RG" />
     <TextField fx:id="txfRg" />
+    </VBox>
 
+    </HBox>
     <VBox alignment="CENTER_RIGHT" spacing="20.0">
         <Button text="Cadastrar" onAction="#onActionCadastrar"/>
     </VBox>

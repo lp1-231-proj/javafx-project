@@ -22,6 +22,12 @@ public class CadastroFuncionarioController {
     private TextField txfcep;
     @FXML
     private TextField txfcidade;
+    @FXML
+    private TextField txfendereco;
+    @FXML
+    private TextField txfbairro;
+    @FXML
+    private TextField txfcomplemento;
 
     
     public void onActionCadastrar() {
@@ -34,7 +40,9 @@ public class CadastroFuncionarioController {
         String dataNascimento = txfdataNascimento.getText();
         String cep = txfcep.getText();
         String cidade = txfcidade.getText();
-    
+        String endereco = txfendereco.getText();
+        String bairro = txfbairro.getText();
+        String complemento = txfcomplemento.getText();
 
         System.out.println(nome);
         System.out.println(email);
@@ -45,6 +53,9 @@ public class CadastroFuncionarioController {
         System.out.println(dataNascimento);
         System.out.println(cep);
         System.out.println(cidade);
+        System.out.println(endereco);
+        System.out.println(bairro);
+        System.out.println(complemento);
         
     }
     

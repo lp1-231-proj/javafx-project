@@ -17,7 +17,7 @@ public class CadastroClienteLojaController {
     @FXML
     private TextField txfRg;
 
-    public void onActionCadastrar() {
+    public void onActionCadastrarC() {
         String nome = txfNome.getText();
         String cpf = txfCpf.getText();
         String dataNascimento = txfDataNascimento.getText();

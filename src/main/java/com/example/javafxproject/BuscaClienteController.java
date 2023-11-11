@@ -12,5 +12,9 @@ public class BuscaClienteController {
 
         System.out.println(CPF);
     }
-    //
+    public void onActionBuscar() {
+        String CPF = txfCpf.getText();
+
+        System.out.println(CPF);
+    }
 }

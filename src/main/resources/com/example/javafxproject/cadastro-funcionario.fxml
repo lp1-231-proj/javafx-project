@@ -11,11 +11,11 @@ fx:controller="com.example.javafxproject.CadastroFuncionarioController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
+    
+    <Label text="Cadastro Funcionario" styleClass="titulo"/>
 
-    <VBox alignment="CENTER" spacing="20.0">
-        <Label text="Cadastro Funcionario" styleClass="titulo"/>
-    </VBox>
-
+    <HBox alignment="CENTER" spacing="20.0">
+    <VBox alignment="CENTER_LEFT" spacing="20.0">
     <Label text="Nome Completo" />
     <TextField fx:id="txfNome" />
 
@@ -33,7 +33,9 @@ fx:controller="com.example.javafxproject.CadastroFuncionarioController">
 
     <Label text="Cargo" />
     <TextField fx:id="txfcargo" />
+    </VBox>
 
+    <VBox alignment="CENTER_LEFT" spacing="20.0">
     <Label text="Data de nascimento" />
     <TextField fx:id="txfdataNascimento" />
 
@@ -43,6 +45,17 @@ fx:controller="com.example.javafxproject.CadastroFuncionarioController">
     <Label text="Cidade" />
     <TextField fx:id="txfcidade" />
 
+    <Label text="Endereco" />
+    <TextField fx:id="txfendereco" />
+
+    <Label text="Bairro" />
+    <TextField fx:id="txfbairro" />
+
+    <Label text="Complemento" />
+    <TextField fx:id="txfcomplemento" />
+    </VBox>
+
+    </HBox>
     <VBox alignment="CENTER_RIGHT" spacing="20.0">
         <Button text="Cadastrar" onAction="#onActionCadastrar"/>
     </VBox>
