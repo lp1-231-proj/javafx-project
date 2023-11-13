@@ -2,6 +2,7 @@ package com.example.javafxproject;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import com.example.javafxproject.cliente.*;
 
 public class CadastroClienteLojaController {
     @FXML
@@ -17,7 +18,7 @@ public class CadastroClienteLojaController {
     @FXML
     private TextField txfRg;
 
-    public void onActionCadastrarC() {
+    public void onActionCadastrar() {
         String nome = txfNome.getText();
         String cpf = txfCpf.getText();
         String dataNascimento = txfDataNascimento.getText();
@@ -25,13 +26,13 @@ public class CadastroClienteLojaController {
         String telefone = txfTelefone.getText();
         String rg = txfRg.getText();
 
-        System.out.println(nome);
-        System.out.println(cpf);
-        System.out.println(dataNascimento);
-        System.out.println(email);
-        System.out.println(telefone);
-        System.out.println(rg);
+        ClienteDAO clienteDAO = new ClienteDAO();
 
+        Cliente cliente = new Cliente(nome, cpf, rg,  dataNascimento, telefone, email);
+
+        Cliente clienteCriado = clienteDAO.create(cliente);
+
+        System.out.println("Cliente Cadastrado");
     }
     
 }

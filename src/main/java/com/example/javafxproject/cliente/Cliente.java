@@ -1,6 +1,8 @@
+package com.example.javafxproject.cliente;
+
 public class Cliente {
 
-    static Integer id;
+    private Integer id;
     private String nome;
     private String cpf;
     private String rg;
@@ -9,7 +11,16 @@ public class Cliente {
     private String email;
 
     public Cliente(Integer id, String nome, String cpf, String rg, String dataNascimento, String telefone, String email) {
-        Cliente.id = id;
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.rg = rg;
+        this.dataNascimento = dataNascimento;
+        this.telefone = telefone;
+        this.email = email;
+    }
+
+    public Cliente(String nome, String cpf, String rg, String dataNascimento, String telefone, String email) {
         this.nome = nome;
         this.cpf = cpf;
         this.rg = rg;
@@ -20,12 +31,12 @@ public class Cliente {
     public Cliente () {
     }
 
-    public static Integer getId() {
+    public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
-        Cliente.id = id;
+        this.id = id;
     }
 
     public String getNome() {
