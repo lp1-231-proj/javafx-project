@@ -1,4 +1,4 @@
-package com.example.javafxproject;
+package com.example.javafxproject.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -26,11 +26,11 @@ public class CadastroClienteLojaController {
         String telefone = txfTelefone.getText();
         String rg = txfRg.getText();
 
-        ClienteDAO clienteDAO = new ClienteDAO();
+        // ClienteDAO clienteDAO = new ClienteDAO();
 
-        Cliente cliente = new Cliente(nome, cpf, rg,  dataNascimento, telefone, email);
+        // Cliente cliente = new Cliente(nome, cpf, rg,  dataNascimento, telefone, email);
 
-        Cliente clienteCriado = clienteDAO.create(cliente);
+        // Cliente clienteCriado = clienteDAO.create(cliente);
 
         System.out.println("Cliente Cadastrado");
     }

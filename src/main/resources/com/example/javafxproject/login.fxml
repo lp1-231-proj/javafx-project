@@ -6,7 +6,7 @@
 <?import java.net.*?>
 
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-fx:controller="com.example.javafxproject.LoginController">
+fx:controller="com.example.javafxproject.controller.LoginController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
@@ -15,11 +15,14 @@ fx:controller="com.example.javafxproject.LoginController">
         <Label text="Login" styleClass="titulo"/> 
     </VBox>
 
-    <Label text="CPF" />
-    <TextField fx:id="txfCpf" />
+    <Label text="Email" />
+    <TextField fx:id="txfEmail" />
 
     <Label text="Senha" />
     <PasswordField fx:id="txfSenha" />
+
+     <Label text="Código de Verificação" />
+     <TextField fx:id="txfCodigoVerificador" />
 
     <VBox alignment="CENTER_RIGHT" spacing="20.0">
         <Button text="Entrar" onAction="#onActionEntrar"/>

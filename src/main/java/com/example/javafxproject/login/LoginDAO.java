@@ -15,20 +15,19 @@ import java.time.LocalDate;
     
 // DAO = Data Access Object
 public class LoginDAO {
-    public LoginDAO create(Login login) {
+    public Login create(Login login) {
         String sql = """
-            INSERT INTO Login (funcionario_id, email, senha, codigoVerificador, verificado, dataCadastro) VALUES (?, ?, ?, ?, ?, ?);    
+            INSERT INTO Acesso (email, senha, codigoVerificador, verificado, dataCadastro) VALUES ( ?, ?, ?, ?, ?);    
         """;
         try (
             Connection connection = Conexao.getConnection();
             PreparedStatement statement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
         ) {
-            statement.setString(1, login.getFuncionarioId());
-            statement.setString(2, login.getEmail());
+            statement.setString(1, login.getEmail());
+            statement.setString(2, login.getSenha());
             statement.setString(3, login.getCodigoVerificador());
-            statement.setString(4, login.getEmail());
-            statement.setString(5, login.getTelefone());
-            statement.setString(6, login.getRg());
+            statement.setBoolean(4, login.getVerificado());
+            statement.setString(5, login.getDataCadastro());
             statement.executeUpdate();
 
             ResultSet rs = statement.getGeneratedKeys();
@@ -36,6 +35,7 @@ public class LoginDAO {
             if(rs.next()) {
                 login.setId(rs.getInt(1));
             }
+
 
             rs.close();
 

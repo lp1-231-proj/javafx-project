@@ -10,7 +10,8 @@ public class Cliente {
     private String telefone;
     private String email;
 
-    public Cliente(String nome, String cpf, String rg, String dataNascimento, String telefone, String email) {
+    public Cliente(Integer id, String nome, String cpf, String rg, String dataNascimento, String telefone, String email) {
+        this.id = id;
         this.nome = nome;
         this.cpf = cpf;
         this.rg = rg;
@@ -31,7 +32,7 @@ public class Cliente {
 
     public String getNome() {
         return nome;
-    }
+    } 
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -71,7 +72,7 @@ public class Cliente {
 
     public String getEmail() {
         return email;
-    }ackage com.example.javafxproject.login;
+    }
 
     public void setEmail (String email) {
         this.email = email;
