@@ -10,16 +10,6 @@ public class Cliente {
     private String telefone;
     private String email;
 
-    public Cliente(Integer id, String nome, String cpf, String rg, String dataNascimento, String telefone, String email) {
-        this.id = id;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.rg = rg;
-        this.dataNascimento = dataNascimento;
-        this.telefone = telefone;
-        this.email = email;
-    }
-
     public Cliente(String nome, String cpf, String rg, String dataNascimento, String telefone, String email) {
         this.nome = nome;
         this.cpf = cpf;
@@ -62,7 +52,7 @@ public class Cliente {
     public void setRg(String rg) {
         this.rg = rg;
     }
-
+   
     public String getDataNascimento() {
         return dataNascimento;
     }
@@ -81,7 +71,7 @@ public class Cliente {
 
     public String getEmail() {
         return email;
-    }
+    }ackage com.example.javafxproject.login;
 
     public void setEmail (String email) {
         this.email = email;
