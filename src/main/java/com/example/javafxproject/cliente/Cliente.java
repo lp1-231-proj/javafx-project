@@ -19,6 +19,15 @@ public class Cliente {
         this.telefone = telefone;
         this.email = email;
     }
+
+    public Cliente(String nome, String cpf, String rg, String dataNascimento, String telefone, String email) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.rg = rg;
+        this.dataNascimento = dataNascimento;
+        this.telefone = telefone;
+        this.email = email;
+    }
     public Cliente () {
     }
 
@@ -32,7 +41,7 @@ public class Cliente {
 
     public String getNome() {
         return nome;
-    } 
+    }
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -53,7 +62,7 @@ public class Cliente {
     public void setRg(String rg) {
         this.rg = rg;
     }
-   
+
     public String getDataNascimento() {
         return dataNascimento;
     }

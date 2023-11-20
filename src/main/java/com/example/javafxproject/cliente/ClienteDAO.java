@@ -9,9 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import com.example.javafxproject.Conexao;
 
-import java.time.LocalDate;
-
-// DAO = Data Access Object
 public class ClienteDAO {
     public Cliente create(Cliente cliente) {
         String sql = """

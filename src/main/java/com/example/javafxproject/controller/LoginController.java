@@ -19,9 +19,9 @@ public class LoginController {
 
         LoginDAO loginDAO = new LoginDAO();
 
-        Login login = new Login(email, senha, codigoVerificador);
+        //Login login = new Login(email, senha, codigoVerificador);
 
-        Login loginCriado = loginDAO.create(login);
+        //Login loginCriado = loginDAO.create(login);
 
         System.out.println("Login Concluido");
 
