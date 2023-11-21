@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import com.example.javafxproject.Conexao;
+import com.example.javafxproject.cliente.Cliente;
 
 public class FuncionarioDAO {
     public Funcionario create(Funcionario funcionario) {
@@ -40,6 +41,31 @@ public class FuncionarioDAO {
             return null;
         }
     }
+
+    public static Funcionario findByName(String nome) {
+        String sql = "SELECT * FROM Funcionario WHERE nome = ?;";
+        
+        try (
+            Connection connection = Conexao.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql);
+        ) {
+            statement.setString(1, nome);
+            ResultSet rs = statement.executeQuery();
+
+            if (rs.next()) {
+                return resultSetToFuncionario(rs);
+            }
+
+             rs.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return null;
+    }
+
     
     
     /*public Funcionario update(Funcionario funcionario) throws SQLException {
@@ -132,9 +158,10 @@ public class FuncionarioDAO {
                 return null;
             }
 
-    }
+        }
+    }*/
 
-    private Funcionario resultSetToFuncionario(ResultSet rs) throws SQLException {
+    private static Funcionario resultSetToFuncionario(ResultSet rs) throws SQLException {
         return new Funcionario(
             rs.getInt("id"),
             rs.getString("nome"),
@@ -144,5 +171,5 @@ public class FuncionarioDAO {
             rs.getString("telefone"),
             rs.getString("cargo")
         );
-    }*/
+}
 }

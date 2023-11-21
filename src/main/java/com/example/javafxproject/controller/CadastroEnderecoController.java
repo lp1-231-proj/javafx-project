@@ -3,10 +3,11 @@ package com.example.javafxproject.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import com.example.javafxproject.endereco.*;
+import com.example.javafxproject.funcionario.*;
 
 public class CadastroEnderecoController {
-   // @FXML
-   // private TextField txffuncionario_id;
+    @FXML
+    private TextField txffuncionario;
     @FXML
     private TextField txfcep;
     @FXML
@@ -17,9 +18,12 @@ public class CadastroEnderecoController {
     private TextField txfbairro;
     @FXML
     private TextField txfcomplemento;
-    
+
     public void onActionCadastrar() {
-        //int funcionario_id = txffuncionario_id.getText();
+        String funcionario = txffuncionario.getText();
+
+        Integer funcionario_id = FuncionarioDAO.findByName(funcionario).getId();
+
         String cep = txfcep.getText();
         String cidade = txfcidade.getText();
         String logradouro = txfendereco.getText();
@@ -28,8 +32,8 @@ public class CadastroEnderecoController {
 
         
         EnderecoDAO enderecoDAO = new EnderecoDAO();
-       // Endereco endereco = new Endereco(funcionario_id, cidade, cep, logradouro, bairro, complemento);
-       // Endereco enderecoCriado = enderecoDAO.create(endereco);
+        Endereco endereco = new Endereco(funcionario_id, cidade, cep, logradouro, bairro, complemento);
+        Endereco enderecoCriado = enderecoDAO.create(endereco);
 
         System.out.println(cep);
         

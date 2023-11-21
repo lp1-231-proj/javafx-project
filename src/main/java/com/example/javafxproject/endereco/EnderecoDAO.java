@@ -12,13 +12,13 @@ import com.example.javafxproject.Conexao;
 public class EnderecoDAO {
     public Endereco create(Endereco endereco) {
         String sql = """
-            INSERT INTO Endereco VALUES (?, ?, ?, ?, ?, ?);    
+            INSERT INTO Endereco (funcionario_id, cep, cidade, endereco, bairro, complemento) VALUES (?, ?, ?, ?, ?, ?);    
         """;
         try (
             Connection connection = Conexao.getConnection();
             PreparedStatement statement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
         ) {
-			statement.setInt(1, endereco.getFuncionarioId());
+            statement.setInt(1, endereco.getFuncionarioId());
             statement.setString(2, endereco.getCep());
 			statement.setString(3, endereco.getCidade());
             statement.setString(4, endereco.getlogradouro());
