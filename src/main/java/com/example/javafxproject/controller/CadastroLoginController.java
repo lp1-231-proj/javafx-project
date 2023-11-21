@@ -1,4 +1,4 @@
-package com.example.javafxproject.controller2;
+package com.example.javafxproject.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -6,6 +6,7 @@ import javafx.scene.control.TextField;
 import com.example.javafxproject.funcionario.*;
 import com.example.javafxproject.login.Login;
 import com.example.javafxproject.login.LoginDAO;
+import com.example.javafxproject.util.Criptografia;
 
 public class CadastroLoginController {
     @FXML
@@ -20,7 +21,9 @@ public class CadastroLoginController {
 
         Integer funcionario_id = FuncionarioDAO.findByName(funcionario).getId();
 
-        String senha = txfsenha.getText();
+        String senhaNCript = txfsenha.getText();
+        String senha = Criptografia.converter(senhaNCript);
+
         String dataCadastro = txfdata.getText();
         
         LoginDAO loginDAO = new LoginDAO();

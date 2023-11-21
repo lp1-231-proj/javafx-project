@@ -15,14 +15,11 @@ fx:controller="com.example.javafxproject.controller.LoginController">
         <Label text="Login" styleClass="titulo"/> 
     </VBox>
 
-    <Label text="Email" />
-    <TextField fx:id="txfEmail" />
+    <Label text="CPF" />
+    <TextField fx:id="txfcpf" />
 
     <Label text="Senha" />
     <PasswordField fx:id="txfSenha" />
-
-     <Label text="Código de Verificação" />
-     <TextField fx:id="txfCodigoVerificador" />
 
     <VBox alignment="CENTER_RIGHT" spacing="20.0">
         <Button text="Entrar" onAction="#onActionEntrar"/>

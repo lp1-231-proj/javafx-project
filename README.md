@@ -1,26 +1,35 @@
-# JavaFX Project
-Projeto JavaFX de exemplo usando Maven.
+## Projeto LP1
+
+Aplicação em linguagem java para simular uma loja de tênis.
+
+## Participantes
+
+- Leonardo Souza
+- Lucas Leandro
+- Mateus Nogueira
+- Maysa Vieira
+- Mirella Dias
+
+## Turma
+
+`231B`
 
 ## Como executar
 
-Fazer o clone do repositório.
+Fazer o clone do repositório;
 
-Remover a pasta .git:
-```bash
-rm -rf .git
-```
+Criar conexão estudante1, ativá-la no arquivo sql e executá-lo;
 
-Iniciar um repositório git, fazer commits e enviar para o seu repositório remoto.
-
-
-Nos laboratórios de informática do IFSP é necessário configurar o proxy para o funcionamento do maven:
-
-```bash
-export JAVA_TOOL_OPTIONS="-Djava.net.useSystemProxies=true"
-```
-
-No mesmo terminal que foi configurado o proxy executar o comando:
+executar o comando:
 ```bash
 ./mvnw javafx:run
 ```
-# javafx-project
+## Observações
+
+Telas conectadas com banco de dados:
+
+- cadastro-cliente-loja.fxml
+- cadastro-funcionario.fxml
+- cadastro-endereco.fxml
+- cadastro-login.fxml
+- cadastro-produto.fxml

@@ -1,4 +1,4 @@
-package com.example.javafxproject.controller2;
+package com.example.javafxproject.controller;
 
 import com.example.javafxproject.modelo.Modelo;
 import com.example.javafxproject.modelo.ModeloDAO;

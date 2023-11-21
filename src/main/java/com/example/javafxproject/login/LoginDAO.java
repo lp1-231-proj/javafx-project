@@ -9,7 +9,7 @@ import com.example.javafxproject.Conexao;
 public class LoginDAO {
     public Login create(Login login) {
         String sql = """
-            INSERT INTO Login VALUES ( ?, ?, ?, ?);    
+            INSERT INTO Login (funcionario_id, senha, dataCadastro) VALUES ( ?, ?, ?);    
         """;
         try (
             Connection connection = Conexao.getConnection();
