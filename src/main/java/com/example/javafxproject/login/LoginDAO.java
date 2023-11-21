@@ -16,9 +16,8 @@ public class LoginDAO {
             PreparedStatement statement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
         ) {
             statement.setInt(1, login.getFuncionarioId());
-            statement.setString(2, login.getEmail());
-            statement.setString(3, login.getSenha());
-            statement.setString(4, login.getDataCadastro());
+            statement.setString(2, login.getSenha());
+            statement.setString(3, login.getDataCadastro());
             statement.executeUpdate();
 
             ResultSet rs = statement.getGeneratedKeys();

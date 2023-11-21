@@ -1,4 +1,4 @@
-package com.example.javafxproject.funcionario;
+package com.example.javafxproject.modelo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,55 +7,56 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
 import com.example.javafxproject.Conexao;
 
-public class FuncionarioDAO {
-    public Funcionario create(Funcionario funcionario) {
+public class ModeloDAO {
+    public Modelo create(Modelo modelo) {
         String sql = """
-            INSERT INTO Funcionario (nome, rg, cpf, dataNascimento, telefone, cargo) VALUES (?, ?, ?, ?, ?, ?);    
+            INSERT INTO Modelo (nome, colorway, tamanho, quantidade, preco) VALUES (?, ?, ?, ?, ?);    
         """;
         try (
             Connection connection = Conexao.getConnection();
             PreparedStatement statement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
         ) {
-			statement.setString(1, funcionario.getNome());
-			statement.setString(2, funcionario.getRg());
-			statement.setString(3, funcionario.getCpf());
-			statement.setString(4, funcionario.getDataNascimento());
-			statement.setString(5, funcionario.getTelefone());
-			statement.setString(6, funcionario.getCargo());
+			statement.setString(1, modelo.getNome());
+			statement.setString(2, modelo.getColorway());
+			statement.setString(3, modelo.getTamanho());
+			statement.setString(4, modelo.getQuantidade());
+            statement.setString(5, modelo.getPreco());
             statement.executeUpdate();
 
             ResultSet rs = statement.getGeneratedKeys();
 
             if(rs.next()) {
-                funcionario.setId(rs.getInt(1));
+                modelo.setId(rs.getInt(1));
             }
             
             rs.close();
             
-            return funcionario;
-        }   catch (SQLException e) {
+            return modelo;
+            }   catch (SQLException e) {
             e.printStackTrace();
             return null;
+            }
         }
-    }
+    
+    
+    /*public Modelo CalculaQuantidadeTotal(String colorway) {
+        String sql = "select sum(quantidade) as quantidadeTotal from modelo where colorway = ?;";
 
-    public static Funcionario findByName(String nome) {
-        String sql = "SELECT * FROM Funcionario WHERE nome = ?;";
-        
         try (
             Connection connection = Conexao.getConnection();
-             PreparedStatement statement = connection.prepareStatement(sql);
+            PreparedStatement statement = connection.prepareStatement(sql);
         ) {
-            statement.setString(1, nome);
+            statement.setString(1, colorway);
             ResultSet rs = statement.executeQuery();
 
             if (rs.next()) {
-                return resultSetToFuncionario(rs);
-            }
+            return resultSetToModelo(rs);
+        }
 
-             rs.close();
+            rs.close();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -64,13 +65,11 @@ public class FuncionarioDAO {
 
         return null;
     }
-
     
-    
-    /*public Funcionario update(Funcionario funcionario) throws SQLException {
+    public Modelo update(Modelo modelo) throws SQLException {
         String sql = """
         UPDATE Funcionario
-        SET nome = ?, telefone = ?, cargo = ?
+        SET tamanho = ?, colorway = ?, quantidade = ?
         WHERE id = ?;
         """;
 
@@ -79,14 +78,15 @@ public class FuncionarioDAO {
             PreparedStatement statement = connection.prepareStatement(sql);
         ) {
 
-            statement.setString(1, funcionario.getNome());
-            statement.setString(2, funcionario.getTelefone());
-            statement.setString(3, funcionario.getCargo());
-            statement.setInt(4, funcionario.getId());
+            statement.setString(1, modelo.getNome());
+            statement.setString(2, modelo.getColorway());
+            statement.setString(3, modelo.getTamanho());
+            statement.setInt(4, modelo.getQuantidade());
+            statement.setInt(5, modelo.getId());
             int linhasAfetadas = statement.executeUpdate();
 
             if (linhasAfetadas > 0) {
-            return funcionario;
+            return modelo;
             }
             return null;
 
@@ -96,7 +96,7 @@ public class FuncionarioDAO {
     }
 
     public void delete(Integer id) {
-        String sql = "DELETE FROM Funcionario WHERE id = ?;";
+        String sql = "DELETE FROM Modelo WHERE id = ?;";
 
         try (
             Connection connection = Conexao.getConnection();
@@ -109,12 +109,12 @@ public class FuncionarioDAO {
         }
     }
 
-    public void delete(Funcionario funcionario) {
-        delete(funcionario.getId());
+    public void delete(Modelo modelo) {
+        delete(modelo.getId());
     }
     
-    public Funcionario findById(Integer id) {
-        String sql = "SELECT * FROM Funcionario WHERE id = ?;";
+    public Modelo findById(Integer id) {
+        String sql = "SELECT * FROM Modelo WHERE id = ?;";
 
         try (
             Connection connection = Conexao.getConnection();
@@ -124,7 +124,7 @@ public class FuncionarioDAO {
             ResultSet rs = statement.executeQuery();
 
             if (rs.next()) {
-            return resultSetToFuncionario(rs);
+            return resultSetToModelo(rs);
         }
 
             rs.close();
@@ -137,9 +137,9 @@ public class FuncionarioDAO {
         return null;
     }
 
-    public List<Funcionario> findAll() {
-        String sql = "SELECT * FROM Funcionario;";
-        List<Funcionario> funcionario = new ArrayList<>();
+    public List<Modelo> findAll() {
+        String sql = "SELECT * FROM Modelo;";
+        List<Modelo> modelo = new ArrayList<>();
 
         try (
             Connection connection = Conexao.getConnection();
@@ -147,28 +147,27 @@ public class FuncionarioDAO {
             ResultSet rs = statement.executeQuery(sql);
             ) {
             while(rs.next()) {
-            funcionario.add(resultSetToFuncionario(rs));
+            modelo.add(resultSetToModelo(rs));
         }
         
-            return funcionario;
+            return modelo;
 
             } catch (Exception e) {
                 e.printStackTrace();
                 return null;
             }
 
-        }
-    }*/
+    }
 
-    private static Funcionario resultSetToFuncionario(ResultSet rs) throws SQLException {
-        return new Funcionario(
+    private Modelo resultSetToModelo(ResultSet rs) throws SQLException {
+        return new Modelo(
             rs.getInt("id"),
             rs.getString("nome"),
-            rs.getString("rg"),
-            rs.getString("cpf"),
-            rs.getString("dataNascimento"),
-            rs.getString("telefone"),
-            rs.getString("cargo")
+            rs.getString("colorway"),
+            rs.getString("tamanho"),
+            rs.getInt("quantidade"),
+            rs.getDouble("preco")
         );
-    }
+    }*/
 }
+    

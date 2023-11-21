@@ -1,4 +1,4 @@
-package com.example.javafxproject.controller;
+package com.example.javafxproject.controller2;
 import java.io.IOException;
 
 import javafx.fxml.FXMLLoader;

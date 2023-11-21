@@ -1,4 +1,4 @@
-package com.example.javafxproject.controller;
+package com.example.javafxproject.controller2;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;

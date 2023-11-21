@@ -3,21 +3,18 @@ package com.example.javafxproject.login;
 public class Login {
     private Integer id;
     private Integer funcionario_id;
-    private String email;
     private String senha;
     private String dataCadastro;
     
-    public Login(Integer id, Integer funcionario_id, String email, String senha, String dataCadastro) {
+    public Login(Integer id, Integer funcionario_id, String senha, String dataCadastro) {
             this.id = id;
             this.funcionario_id = funcionario_id;
-            this.email = email;
             this.senha = senha;
             this.dataCadastro = dataCadastro;
     }
 
-    public Login(Integer funcionario_id, String email, String senha, String dataCadastro) {
+    public Login(Integer funcionario_id, String senha, String dataCadastro) {
             this.funcionario_id = funcionario_id;
-            this.email = email;
             this.senha = senha;
             this.dataCadastro = dataCadastro;
     }
@@ -39,14 +36,6 @@ public class Login {
     
     public void setFuncionarioId(Integer funcionario_id) {
         this.funcionario_id = funcionario_id;
-    }
-        
-    public String getEmail() {
-        return email;
-    }
-        
-    public void setEmail(String email) {
-        this.email = email;
     }
         
     public String getSenha() {

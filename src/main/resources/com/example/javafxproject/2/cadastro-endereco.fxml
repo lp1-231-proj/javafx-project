@@ -24,7 +24,9 @@ fx:controller="com.example.javafxproject.controller.CadastroEnderecoController">
 
     <Label text="Cidade" />
     <TextField fx:id="txfcidade" />
+    </VBox>
 
+    <VBox alignment="CENTER_LEFT" spacing="20.0">
     <Label text="Endereco" />
     <TextField fx:id="txfendereco" />
 
